@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:shopilli/features/products/domain/entities/porduct.dart';
 
 class ProductModel extends Product {
@@ -22,7 +24,7 @@ class ProductModel extends Product {
       description: json['description'],
       price: json['price'],
       discountPercentage: json['discountPercentage'],
-      rating: json['rating'],
+      rating: json['rating'].toString(),
       stock: json['stock'],
       brand: json['brand'],
       category: json['category'],

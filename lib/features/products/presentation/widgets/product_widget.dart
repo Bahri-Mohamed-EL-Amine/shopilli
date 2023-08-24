@@ -9,14 +9,15 @@ class ProductWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(5),
-      width: 200,
+      margin: const EdgeInsets.all(5),
+      color: Colors.grey[100],
+      padding: const EdgeInsets.all(20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: 150,
-            width: 150,
+            height: 100,
+            width: 100,
             child: Image.network(
               product.thumbnail,
             ),
@@ -39,7 +40,7 @@ class ProductWidget extends StatelessWidget {
               RatingBar.builder(
                 itemSize: 15,
                 itemCount: 5,
-                initialRating: product.rating,
+                //initialRating: product.rating as double,
                 onRatingUpdate: (value) {},
                 ignoreGestures: true,
                 itemBuilder: (context, index) {
@@ -68,7 +69,7 @@ class ProductWidget extends StatelessWidget {
               backgroundColor: MaterialStateProperty.all(Colors.amber),
             ),
             child: const Text('Add to cart'),
-          )
+          ),
         ],
       ),
     );

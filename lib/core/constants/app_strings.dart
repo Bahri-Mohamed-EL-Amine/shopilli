@@ -1,1 +1,1 @@
-const String baseUrl = "https://dummyjson.com/";
+const String baseUrl = "https://dummyjson.com";

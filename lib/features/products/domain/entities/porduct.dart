@@ -6,12 +6,12 @@ class Product extends Equatable {
   final String description;
   final int price;
   final double discountPercentage;
-  final double rating;
+  final String rating;
   final int stock;
   final String brand;
   final String category;
   final String thumbnail;
-  final List<String> images;
+  final List<dynamic> images;
 
   const Product({
     required this.id,
