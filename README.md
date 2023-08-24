@@ -1,3 +1,3 @@
 # shopilli
 
-A new Flutter project.
+A shop app using flutter.
