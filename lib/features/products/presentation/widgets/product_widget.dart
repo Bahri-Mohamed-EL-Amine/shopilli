@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:shopilli/features/products/domain/entities/cart_item.dart';
 import 'package:shopilli/features/products/domain/entities/porduct.dart';
+import 'package:shopilli/features/products/presentation/bloc/cart/cart_bloc.dart';
 
 class ProductWidget extends StatelessWidget {
   final Product product;
   const ProductWidget({super.key, required this.product});
-  // final Product product = Product(brand: "iphone" );
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,10 +18,11 @@ class ProductWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: 100,
-            width: 100,
+            height: 150,
+            width: 150,
             child: Image.network(
               product.thumbnail,
+              scale: 2,
             ),
           ),
           Text(
@@ -64,7 +67,12 @@ class ProductWidget extends StatelessWidget {
             style: const TextStyle(color: Colors.green),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              final cartItem = CartItem(product: product);
+              BlocProvider.of<CartBloc>(context).add(
+                CartAddProductEvent(product: cartItem),
+              );
+            },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.amber),
             ),

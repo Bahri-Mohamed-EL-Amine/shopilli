@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:shopilli/features/products/domain/entities/porduct.dart';
 
 class ProductModel extends Product {
